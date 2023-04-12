@@ -23,7 +23,9 @@ async function mapPhoneNumber(phoneNumber) {
             const phoneNumberFormatNational = parsePhoneNumber(phone, phoneNumberData.country_name).formatNational()
             phoneNumberData.phone = phoneNumberFormatNational;
         } else {
-            phoneNumberData.phone = "Invalid phone number";
+            phoneNumberData.phone = cleanPhone
+            phoneNumberData.country_code = undefined
+            phoneNumberData.country_name = undefined
         }
         console.log("🚀 ~ file: index.js:34 ~ mapPhoneNumber ~ phoneNumberData:", phoneNumberData)
         return phoneNumberData;
